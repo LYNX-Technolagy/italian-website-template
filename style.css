@@ -1,0 +1,1508 @@
+/* ============================================================
+   GOOGLE FONTS IMPORT
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;800&family=Cormorant+Garamond:wght@300;400;600;700&display=swap');
+
+/* ============================================================
+   RESET & BASE STYLES
+   ============================================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Cormorant Garamond', serif;
+    line-height: 1.6;
+    color: #2c2c2c;
+    background-color: #faf8f6;
+    overflow-x: hidden;
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    background-color: transparent;
+    color: #ffffff;
+    font-family: 'Playfair Display', serif;
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn:hover {
+    background-color: #ffffff;
+    color: #2c2c2c;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    border-color: #ffffff;
+}
+
+.btn-primary {
+    background-color: #d32f2f;
+    color: #fff;
+    border-color: #d32f2f;
+    padding: 0.8rem 2.5rem;
+    font-size: 0.8rem;
+}
+
+.btn-primary:hover {
+    background-color: #b71c1c;
+    border-color: #b71c1c;
+    color: #fff;
+}
+
+.btn-outline {
+    border-color: rgba(255, 255, 255, 0.4);
+    color: #fff;
+    padding: 0.8rem 2.5rem;
+    font-size: 0.8rem;
+}
+
+.btn-outline:hover {
+    background-color: #fff;
+    color: #2c2c2c;
+    border-color: #fff;
+}
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 3rem;
+    position: fixed;
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    max-width: 1400px;
+    z-index: 1000;
+    background: transparent;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 20px;
+    border: 1px solid transparent;
+    transition: backdrop-filter 0.4s ease, 
+                background-color 0.4s ease,
+                box-shadow 0.4s ease,
+                border-color 0.4s ease,
+                top 0.4s ease;
+}
+
+nav.scrolled {
+    top: 0.5rem;
+    background: rgba(250, 248, 246, 0.92);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.10);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+nav.scrolled .hamburger { color: #2c2c2c; }
+nav.scrolled .nav-links a { color: #2c2c2c; }
+nav.scrolled .logo h1 { color: #2c2c2c; }
+nav.scrolled .logo p { color: #888; }
+nav.scrolled .cta .btn { 
+    color: #2c2c2c; 
+    border-color: rgba(44, 44, 44, 0.2); 
+}
+
+nav.scrolled .cta .btn:hover { 
+    background-color: #2c2c2c; 
+    color: #fff; 
+    border-color: #2c2c2c; 
+}
+
+.hamburger {
+    cursor: pointer;
+    font-size: 1.4rem;
+    color: #ffffff;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 50%;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.hamburger:hover {
+    color: #d32f2f;
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex: 1;
+}
+
+.nav-links a {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 2.5px;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1.5px;
+    background-color: #d32f2f;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover { color: #d32f2f; }
+.nav-links a:hover::after { width: 100%; }
+
+.logo {
+    text-align: center;
+    flex: 1;
+}
+
+.logo h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 4px;
+}
+
+.logo p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-style: italic;
+    letter-spacing: 1.5px;
+    margin-bottom: 0;
+}
+
+.cta {
+    flex: 1;
+    text-align: right;
+}
+
+/* ============================================================
+   HERO SECTION
+   ============================================================ */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 6rem 2rem 3rem;
+    text-align: center;
+    position: relative;
+    background-image: url(assets/images/hero.jfif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.4) 100%);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    animation: fadeInUp 1s ease forwards;
+}
+
+.hero-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.6);
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 1.5rem;
+}
+
+.hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.8rem;
+    font-weight: 500;
+    color: #fff;
+    line-height: 1.1;
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem;
+}
+
+.hero-content h1 .highlight {
+    font-weight: 800;
+    color: #d32f2f;
+    text-shadow: 0 2px 30px rgba(211, 47, 47, 0.3);
+}
+
+.hero-content p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 550px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.8;
+}
+
+.hero-cta {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ============================================================
+   ABOUT SECTION
+   ============================================================ */
+.about {
+    padding: 6rem 3rem;
+    background: linear-gradient(180deg, #faf8f6 0%, #f5f2ed 100%);
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.about-intro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 3.5rem;
+    text-align: center;
+}
+
+.about-intro p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #666;
+    font-style: italic;
+    line-height: 1.6;
+}
+
+.decorative-line {
+    display: block;
+    width: 40px;
+    min-height: 1px;
+    background: linear-gradient(90deg, transparent, #d32f2f, transparent);
+    opacity: 0.5;
+}
+
+.about-container {
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+.about-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #2c2c2c;
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+}
+
+.about-content p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #555;
+    line-height: 1.9;
+    margin-bottom: 2rem;
+}
+
+.about-content .btn { 
+    color: #fff; 
+    border-color: #d32f2f; 
+}
+
+.about-content .btn:hover { 
+    background-color: #b71c1c; 
+    border-color: #b71c1c; 
+    color: #fff; 
+}
+
+.about-image {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    display: block;
+    border-radius: 4px;
+    border: 6px solid #ffffff;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.about-image img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+}
+
+/* ============================================================
+   PLACEHOLDER VISUAL STYLES
+   ============================================================ */
+
+/* Large placeholder for About section */
+.placeholder-visual {
+    width: 100%;
+    aspect-ratio: 4/3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    border: 6px solid #ffffff;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    background: linear-gradient(145deg, #e8e0d5, #d6cdc0);
+    color: #2c2c2c;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    gap: 0.5rem;
+    text-align: center;
+    padding: 1rem;
+}
+
+.placeholder-visual i {
+    font-size: 3.5rem;
+    color: #b71c1c;
+    opacity: 0.7;
+    transition: transform 0.3s ease;
+}
+
+.placeholder-visual:hover {
+    transform: scale(1.02);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+}
+
+.placeholder-visual:hover i {
+    transform: scale(1.1) rotate(-5deg);
+}
+
+.placeholder-visual .sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 1rem;
+    color: #666;
+    font-style: italic;
+}
+
+/* Placeholder variants */
+.placeholder-visual.v1 { background: linear-gradient(145deg, #dbeafe, #bfdbfe); }
+.placeholder-visual.v2 { background: linear-gradient(145deg, #e0f2fe, #bae6fd); }
+.placeholder-visual.v3 { background: linear-gradient(145deg, #ede9fe, #c7d2fe); }
+.placeholder-visual.v4 { background: linear-gradient(145deg, #fce7f3, #fbcfe8); }
+.placeholder-visual.v5 { background: linear-gradient(145deg, #d1fae5, #a7f3d0); }
+.placeholder-visual.v6 { background: linear-gradient(145deg, #fef3c7, #fde68a); }
+
+/* Small placeholder for Menu items */
+.placeholder-visual-sm {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(145deg, #2a2a2a, #1f1f1f);
+    color: #aaa;
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    gap: 0.3rem;
+    transition: transform 0.4s ease, filter 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.placeholder-visual-sm::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 40%, rgba(211, 47, 47, 0.03) 0%, transparent 60%);
+    transition: opacity 0.6s ease;
+    opacity: 0;
+}
+
+.menu-item:hover .placeholder-visual-sm::before {
+    opacity: 1;
+}
+
+.menu-item:hover .placeholder-visual-sm {
+    transform: scale(1.03);
+    filter: brightness(1.2);
+}
+
+.placeholder-visual-sm i {
+    font-size: 2.8rem;
+    color: #d32f2f;
+    opacity: 0.5;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.menu-item:hover .placeholder-visual-sm i {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+.placeholder-visual-sm .label {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 0.2rem 1rem;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    color: #ddd;
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: 1px;
+    transition: background 0.3s ease;
+    backdrop-filter: blur(4px);
+}
+
+.menu-item:hover .placeholder-visual-sm .label {
+    background: rgba(211, 47, 47, 0.3);
+}
+
+/* Menu item type-specific placeholder styles */
+.placeholder-visual-sm.food {
+    background: linear-gradient(145deg, #2a1f1f, #1f1414);
+}
+.placeholder-visual-sm.food i { color: #e74c3c; }
+
+.placeholder-visual-sm.drinks {
+    background: linear-gradient(145deg, #1f2a1f, #141f14);
+}
+.placeholder-visual-sm.drinks i { color: #2ecc71; }
+
+.placeholder-visual-sm.desserts {
+    background: linear-gradient(145deg, #2a1f2a, #1f141f);
+}
+.placeholder-visual-sm.desserts i { color: #e67e22; }
+
+.placeholder-visual-sm.specials {
+    background: linear-gradient(145deg, #2a2a1f, #1f1f14);
+}
+.placeholder-visual-sm.specials i { color: #f1c40f; }
+
+/* ============================================================
+   MENU SECTION
+   ============================================================ */
+.menu {
+    padding: 6rem 3rem;
+    background: #1a1a1a;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.menu-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.menu-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+}
+
+.menu-header p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    color: #aaa;
+    font-style: italic;
+}
+
+.menu-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.menu-tab {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #888;
+    background: transparent;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid transparent;
+}
+
+.menu-tab:hover { color: #ffffff; }
+.menu-tab.active { 
+    color: #d32f2f; 
+    border-bottom-color: #d32f2f; 
+}
+
+.menu-category { 
+    margin-bottom: 3rem;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.menu-category:last-child { margin-bottom: 0; }
+
+.menu-category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.menu-category-header h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+.menu-category-header .view-all {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    color: #d32f2f;
+    text-decoration: none;
+    font-style: italic;
+    transition: color 0.3s ease;
+}
+
+.menu-category-header .view-all:hover { color: #ff6b6b; }
+
+.menu-scroll {
+    overflow-x: auto;
+    overflow-y: hidden;
+    display: flex;
+    gap: 1.5rem;
+    padding: 0.5rem 0 1.5rem 0;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: #d32f2f #2a2a2a;
+}
+
+.menu-scroll::-webkit-scrollbar { height: 4px; }
+.menu-scroll::-webkit-scrollbar-track { 
+    background: #2a2a2a; 
+    border-radius: 10px; 
+}
+.menu-scroll::-webkit-scrollbar-thumb { 
+    background: #d32f2f; 
+    border-radius: 10px; 
+}
+.menu-scroll::-webkit-scrollbar-thumb:hover { background: #ff6b6b; }
+
+.menu-item {
+    flex: 0 0 280px;
+    min-width: 280px;
+    background: #242424;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.menu-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+    border-color: rgba(211, 47, 47, 0.3);
+}
+
+.menu-item-image {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    background: #1a1a1a;
+}
+
+.menu-item-content { 
+    padding: 1.2rem 1.5rem 1.5rem; 
+}
+
+.menu-item-content h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 0.3rem;
+}
+
+.menu-item-content .description {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.95rem;
+    color: #aaa;
+    line-height: 1.5;
+    margin-bottom: 0.8rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.menu-item-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-item-footer .price {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #d32f2f;
+}
+
+.menu-item-footer .add-btn {
+    background: transparent;
+    border: 1px solid #d32f2f;
+    color: #d32f2f;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-item-footer .add-btn:hover {
+    background: #d32f2f;
+    color: #ffffff;
+    transform: rotate(90deg);
+    box-shadow: 0 0 20px rgba(211, 47, 47, 0.3);
+}
+
+.scroll-indicator {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.scroll-indicator button {
+    background: transparent;
+    border: 1px solid #444;
+    color: #888;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scroll-indicator button:hover {
+    background: #d32f2f;
+    border-color: #d32f2f;
+    color: #fff;
+}
+
+/* ============================================================
+   SPECIALS BANNER
+   ============================================================ */
+.specials-banner {
+    position: relative;
+    height: 60vh;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+    margin-top: 0;
+    background-attachment: fixed;
+}
+
+.specials-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.85));
+    z-index: 1;
+}
+
+.specials-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    padding: 0 2rem;
+}
+
+.specials-content .hero-subtitle {
+    margin-bottom: 1rem;
+    color: #d32f2f;
+    letter-spacing: 8px;
+}
+
+.specials-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.2rem;
+    color: #fff;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.specials-content p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+    line-height: 1.8;
+}
+
+.specials-content .btn-primary {
+    padding: 1rem 3rem;
+    font-size: 0.85rem;
+}
+
+/* ============================================================
+   TESTIMONIALS SECTION
+   ============================================================ */
+.testimonials {
+    padding: 6rem 3rem;
+    background: linear-gradient(180deg, #faf8f6 0%, #f5f2ed 100%);
+}
+
+.testimonials-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.testimonials-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.testimonials-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2c2c2c;
+    margin-bottom: 0.5rem;
+}
+
+.testimonials-header p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    color: #888;
+    font-style: italic;
+}
+
+.testimonials-scroll {
+    overflow-x: auto;
+    overflow-y: hidden;
+    display: flex;
+    gap: 1.5rem;
+    padding-bottom: 1.5rem;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
+}
+
+.testimonials-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.review-card {
+    flex: 0 0 380px;
+    min-width: 380px;
+    background: #ffffff;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.10);
+}
+
+.review-stars {
+    margin-bottom: 1.5rem;
+    color: #d4a017;
+    font-size: 0.9rem;
+    display: flex;
+    gap: 0.2rem;
+}
+
+.review-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    flex-grow: 1;
+}
+
+.review-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-top: 1px solid rgba(0,0,0,0.06);
+    padding-top: 1.5rem;
+}
+
+.author-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #2c2c2c, #444);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.author-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.author-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #2c2c2c;
+}
+
+.author-source {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.85rem;
+    color: #aaa;
+}
+
+.light-indicator button {
+    border-color: #ddd;
+    color: #888;
+}
+
+.light-indicator button:hover {
+    background: #2c2c2c;
+    border-color: #2c2c2c;
+    color: #fff;
+}
+
+/* ============================================================
+   RESERVATION SECTION
+   ============================================================ */
+.dark-section {
+    background: #1a1a1a;
+}
+
+.reservations {
+    padding: 6rem 3rem;
+}
+
+.reservations-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 4rem;
+    align-items: flex-start;
+}
+
+.reservation-info {
+    flex: 1;
+}
+
+.reservation-info h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1.5rem;
+}
+
+.reservation-info > p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    color: #aaa;
+    line-height: 1.8;
+    margin-bottom: 3rem;
+}
+
+.reservation-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #ccc;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.detail-item:hover {
+    color: #fff;
+}
+
+.detail-item i {
+    color: #d32f2f;
+    width: 20px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.reservation-form {
+    flex: 1.2;
+    background: #242424;
+    padding: 3rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    transition: border-color 0.3s ease;
+}
+
+.reservation-form:hover {
+    border-color: rgba(211, 47, 47, 0.2);
+}
+
+.form-row {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input, 
+.form-group select {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    color: #fff;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    padding: 0.8rem 1rem;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.form-group select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+}
+
+.form-group input::placeholder {
+    color: #555;
+}
+
+.form-group input:focus, 
+.form-group select:focus {
+    border-color: #d32f2f;
+    box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.1);
+}
+
+.form-group input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(0.7);
+    cursor: pointer;
+}
+
+.form-submit-btn {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 1rem;
+    font-size: 0.85rem;
+    border-radius: 4px;
+}
+
+/* ============================================================
+   MOBILE MENU
+   ============================================================ */
+.mobile-backdrop {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.mobile-backdrop.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    max-width: 400px;
+    height: 100vh;
+    background-color: #faf8f6;
+    z-index: 2000;
+    padding: 2rem;
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-menu.active { right: 0; }
+
+.mobile-menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(44, 44, 44, 0.06);
+}
+
+.mobile-menu-header .logo h1 { 
+    color: #2c2c2c; 
+    font-size: 1.2rem; 
+}
+.mobile-menu-header .logo p { 
+    color: #888; 
+    font-size: 0.7rem; 
+}
+
+.close-menu {
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #2c2c2c;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.close-menu:hover {
+    background-color: rgba(211, 47, 47, 0.08);
+    color: #d32f2f;
+}
+
+.mobile-menu-links {
+    list-style: none;
+    padding: 2rem 0;
+    flex: 1;
+}
+
+.mobile-menu-links li { margin-bottom: 0; }
+
+.mobile-menu-links a {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: #2c2c2c;
+    text-decoration: none;
+    display: block;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    transition: color 0.3s ease, transform 0.3s ease, padding-left 0.3s ease;
+}
+
+.mobile-menu-links a:hover {
+    color: #d32f2f;
+    padding-left: 8px;
+}
+
+.mobile-menu-footer {
+    padding-top: 2rem;
+    border-top: 1px solid rgba(44, 44, 44, 0.06);
+}
+
+.mobile-menu-footer p {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 1rem;
+}
+
+.social-icons { 
+    display: flex; 
+    gap: 1.2rem; 
+}
+
+.social-icons a {
+    color: #2c2c2c;
+    font-size: 1.2rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #d32f2f;
+    transform: translateY(-3px);
+}
+
+/* ============================================================
+   RESPONSIVE DESIGN
+   ============================================================ */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .hero-content h1 { font-size: 3.2rem; }
+    .about { padding: 5rem 2.5rem; }
+}
+
+/* Mobile Landscape & Small Tablets */
+@media (max-width: 768px) {
+    nav { 
+        top: 1rem; 
+        padding: 1rem 1.5rem; 
+        width: 96%; 
+    }
+    nav.scrolled { top: 0.5rem; }
+    .nav-links { gap: 1.5rem; }
+    .nav-links a { 
+        font-size: 0.65rem; 
+        letter-spacing: 2px; 
+    }
+    .logo h1 { 
+        font-size: 1.2rem; 
+        letter-spacing: 3px; 
+    }
+    .logo p { font-size: 0.7rem; }
+    .hero-content h1 { font-size: 2.8rem; }
+    .hero-content p { font-size: 1.1rem; }
+    
+    .about { padding: 4rem 1.5rem; }
+    .about-intro { 
+        flex-direction: column; 
+        gap: 1rem; 
+        margin-bottom: 2.5rem; 
+    }
+    .about-intro p { font-size: 1.2rem; }
+    .about-container { 
+        flex-direction: column; 
+        gap: 2.5rem; 
+    }
+    .about-image img { max-height: 400px; }
+    
+    .menu { padding: 4rem 1.5rem; }
+    .menu-header h2 { font-size: 2rem; }
+    .menu-item { 
+        flex: 0 0 240px; 
+        min-width: 240px; 
+    }
+    .menu-item-image { height: 150px; }
+    .menu-tabs { gap: 0.5rem; }
+    .menu-tab { 
+        font-size: 0.7rem; 
+        padding: 0.4rem 1rem; 
+    }
+    
+    .specials-banner { 
+        height: 50vh; 
+        min-height: 350px; 
+        background-attachment: scroll; 
+    }
+    .specials-content h2 { font-size: 2.2rem; }
+    
+    .testimonials { padding: 4rem 1.5rem; }
+    .review-card { 
+        flex: 0 0 320px; 
+        min-width: 320px; 
+        padding: 2rem; 
+    }
+    
+    .reservations { padding: 4rem 1.5rem; }
+    .reservations-container { 
+        flex-direction: column; 
+        gap: 3rem; 
+    }
+    .reservation-form { padding: 2rem; }
+    
+    .mobile-menu { max-width: 100%; }
+
+    /* Placeholder responsive */
+    .placeholder-visual {
+        font-size: 1.2rem;
+        padding: 0.8rem;
+    }
+    .placeholder-visual i { font-size: 2.8rem; }
+    .placeholder-visual-sm i { font-size: 2.2rem; }
+}
+
+/* Mobile Portrait */
+@media (max-width: 576px) {
+    nav { 
+        top: 0.5rem; 
+        padding: 0.8rem 1rem; 
+        width: 98%; 
+        border-radius: 14px; 
+    }
+    nav.scrolled { 
+        top: 0.3rem; 
+        border-radius: 12px; 
+    }
+    .nav-links a { display: none; }
+    .hamburger { 
+        font-size: 1.2rem; 
+        width: 40px; 
+        height: 40px; 
+    }
+    .logo h1 { 
+        font-size: 1rem; 
+        letter-spacing: 2px; 
+    }
+    .logo p { font-size: 0.65rem; }
+    .cta .btn { 
+        font-size: 0.6rem; 
+        padding: 0.4rem 1rem; 
+        border-color: rgba(255, 255, 255, 0.5); 
+    }
+
+    .hero { 
+        padding: 5rem 1.2rem 2rem; 
+        min-height: 90vh; 
+    }
+    .hero-subtitle { 
+        font-size: 0.7rem; 
+        letter-spacing: 4px; 
+    }
+    .hero-content h1 { 
+        font-size: 2rem; 
+        letter-spacing: 1px; 
+    }
+    .hero-content p { 
+        font-size: 0.95rem; 
+        max-width: 100%; 
+        padding: 0 0.5rem; 
+    }
+    .hero-cta { 
+        flex-direction: column; 
+        align-items: center; 
+        gap: 0.8rem; 
+    }
+    .btn-primary, .btn-outline { 
+        padding: 0.7rem 2rem; 
+        font-size: 0.7rem; 
+        width: 100%; 
+        max-width: 260px; 
+    }
+
+    .about { padding: 3rem 1.2rem; }
+    .about-intro p { font-size: 1.05rem; }
+    .about-content h2 { font-size: 1.8rem; }
+    .about-content p { 
+        font-size: 1rem; 
+        line-height: 1.7; 
+    }
+    .about-image { min-width: unset; }
+    .about-image img { max-height: 300px; }
+
+    .menu { padding: 3rem 1rem; }
+    .menu-header h2 { font-size: 1.6rem; }
+    .menu-header p { font-size: 1rem; }
+    .menu-item { 
+        flex: 0 0 200px; 
+        min-width: 200px; 
+    }
+    .menu-item-image { height: 130px; }
+    .menu-item-content { padding: 1rem 1.2rem 1.2rem; }
+    .menu-item-content h4 { font-size: 1rem; }
+    .menu-item-content .description { font-size: 0.85rem; }
+    .menu-item-footer .price { font-size: 1rem; }
+    .menu-category-header h3 { font-size: 1.3rem; }
+    
+    .menu-tabs { 
+        gap: 0.3rem; 
+        justify-content: flex-start; 
+        overflow-x: auto; 
+        flex-wrap: nowrap; 
+        padding-bottom: 0.5rem; 
+        -webkit-overflow-scrolling: touch; 
+    }
+    .menu-tab { 
+        font-size: 0.65rem; 
+        padding: 0.3rem 0.8rem; 
+        white-space: nowrap; 
+    }
+    .scroll-indicator { display: none; }
+    
+    .specials-content h2 { font-size: 1.8rem; }
+    .specials-content p { font-size: 1rem; }
+    .specials-content .btn-primary { 
+        padding: 0.8rem 2rem; 
+        font-size: 0.75rem; 
+    }
+    
+    .testimonials { padding: 3rem 1rem; }
+    .testimonials-header h2 { font-size: 1.8rem; }
+    .review-card { 
+        flex: 0 0 85vw; 
+        min-width: 85vw; 
+        padding: 1.5rem; 
+    }
+    .light-indicator { display: none; }
+    
+    .reservations { padding: 3rem 1rem; }
+    .reservation-info h2 { font-size: 1.8rem; }
+    .form-row { 
+        flex-direction: column; 
+        gap: 1rem; 
+    }
+    .reservation-form { padding: 1.5rem; }
+    
+    .mobile-menu-links a { font-size: 1.5rem; }
+    .mobile-menu { padding: 1.5rem; }
+
+    /* Placeholder responsive */
+    .placeholder-visual {
+        font-size: 1rem;
+        padding: 0.5rem;
+        border-width: 4px;
+    }
+    .placeholder-visual i { font-size: 2.2rem; }
+    .placeholder-visual .sub { font-size: 0.85rem; }
+    .placeholder-visual-sm i { font-size: 1.8rem; }
+    .placeholder-visual-sm .label {
+        font-size: 0.6rem;
+        padding: 0.15rem 0.8rem;
+    }
+}
+
+/* Small Phones */
+@media (max-width: 380px) {
+    .hero-content h1 { font-size: 1.6rem; }
+    .logo h1 { font-size: 0.85rem; }
+    .logo p { font-size: 0.55rem; }
+    .cta .btn { 
+        font-size: 0.55rem; 
+        padding: 0.3rem 0.8rem; 
+    }
+    .about { padding: 2rem 1rem; }
+    .about-content h2 { font-size: 1.5rem; }
+    .about-content p { font-size: 0.9rem; }
+    .about-image img { max-height: 250px; }
+
+    .placeholder-visual {
+        font-size: 0.85rem;
+        padding: 0.3rem;
+        border-width: 3px;
+    }
+    .placeholder-visual i { font-size: 1.8rem; }
+    .placeholder-visual .sub { font-size: 0.7rem; }
+}
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+@keyframes fadeInUp {
+    from { 
+        opacity: 0; 
+        transform: translateY(30px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+/* ============================================================
+   TRANSITIONS
+   ============================================================ */
+.about-image img,
+.menu-item,
+.review-card,
+.detail-item,
+.form-group input,
+.form-group select,
+.placeholder-visual,
+.placeholder-visual-sm {
+    transition: all 0.3s ease;
+}

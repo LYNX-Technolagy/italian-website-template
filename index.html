@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fornello | Authentic Italian Fine Dining</title>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;800&family=Cormorant+Garamond:wght@300;400;600;700&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- ==================== NAVIGATION ==================== -->
+    <nav>
+        <div class="nav-links">
+            <!-- Hamburger - Always Visible -->
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+            <!-- Desktop Nav Links -->
+            <a href="#menu">Menu</a>
+            <a href="#specials">Specials</a>
+        </div>
+
+        <div class="logo">
+            <h1>Fornello</h1>
+            <p>Authentic Italian Cuisine</p>
+        </div>
+
+        <div class="cta">
+            <a href="#reservations" class="btn">Reserve</a>
+        </div>
+    </nav>
+
+    <!-- ==================== MOBILE MENU BACKDROP ==================== -->
+    <div class="mobile-backdrop" id="mobileBackdrop"></div>
+
+    <!-- ==================== MOBILE MENU (Hidden by default) ==================== -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <div class="logo">
+                <h1>Fornello</h1>
+                <p>Authentic Italian Cuisine</p>
+            </div>
+            <div class="close-menu" id="closeMenu">
+                <i class="fas fa-times"></i>
+            </div>
+        </div>
+        <ul class="mobile-menu-links">
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#specials">Specials</a></li>
+            <li><a href="#reservations">Reservations</a></li>
+            <li><a href="#story">Our Story</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="mobile-menu-footer">
+            <p>Follow Us</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-yelp"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="hero-subtitle">Est. 1968</span>
+            <h1>
+                Where Tradition Meets<br />
+                <span class="highlight">La Dolce Vita</span>
+            </h1>
+            <p>
+                Handcrafted pizzas baked in a wood-fired oven, using the finest
+                ingredients Italy has to offer.
+            </p>
+            <div class="hero-cta">
+                <a href="#menu" class="btn btn-primary">Explore Menu</a>
+                <a href="#story" class="btn btn-outline">Our Story</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== ABOUT SECTION ==================== -->
+    <section class="about" id="story">
+        <div class="about-intro">
+            <span class="decorative-line"></span>
+            <p>Food, which has been passed through generations, the place, that feels like home</p>
+            <span class="decorative-line"></span>
+        </div>
+        <div class="about-container">
+            <div class="about-content">
+                <h2>A Legacy of Flavor</h2>
+                <p>
+                    Fornello has been serving authentic Italian cuisine since 1968.
+                    Our passion for traditional recipes and fresh ingredients has
+                    made us a beloved destination for food lovers.
+                </p>
+                <a href="#reservations" class="btn btn-primary">Reserve a Table</a>
+            </div>
+            <div class="about-image">
+                <img src="assets/images/about-image.jfif" alt="Restaurant Interior" />
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== MENU SECTION ==================== -->
+    <section class="menu" id="menu">
+        <div class="menu-header">
+            <h2>Our Menu</h2>
+            <p>Handcrafted with love, inspired by tradition</p>
+        </div>
+
+        <!-- Category Tabs -->
+        <div class="menu-tabs">
+            <button class="menu-tab active" data-category="all">All</button>
+            <button class="menu-tab" data-category="food">Food</button>
+            <button class="menu-tab" data-category="drinks">Drinks</button>
+            <button class="menu-tab" data-category="desserts">Desserts</button>
+            <button class="menu-tab" data-category="specials">Specials</button>
+        </div>
+
+        <!-- Food Category -->
+        <div class="menu-category" data-category="food">
+            <div class="menu-category-header">
+                <h3>Wood-Fired Pizzas</h3>
+                <a href="#" class="view-all">View All →</a>
+            </div>
+            <div class="menu-scroll" id="scrollFood">
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <div class="placeholder-visual-sm">
+                            <i class="fas fa-pizza-slice"></i>
+                            <span class="label">Margherita</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-content">
+                        <h4>Margherita</h4>
+                        <p class="description">San Marzano tomato, fresh mozzarella, basil, olive oil</p>
+                        <div class="menu-item-footer">
+                            <span class="price">$18</span>
+                            <button class="add-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <div class="placeholder-visual-sm">
+                            <i class="fas fa-pizza-slice"></i>
+                            <span class="label">Pepperoni</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-content">
+                        <h4>Pepperoni</h4>
+                        <p class="description">Tomato sauce, mozzarella, pepperoni, oregano</p>
+                        <div class="menu-item-footer">
+                            <span class="price">$22</span>
+                            <button class="add-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <div class="placeholder-visual-sm">
+                            <i class="fas fa-pizza-slice"></i>
+                            <span class="label">Funghi</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-content">
+                        <h4>Funghi</h4>
+                        <p class="description">Wild mushrooms, truffle oil, mozzarella, thyme</p>
+                        <div class="menu-item-footer">
+                            <span class="price">$24</span>
+                            <button class="add-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <div class="placeholder-visual-sm">
+                            <i class="fas fa-pizza-slice"></i>
+                            <span class="label">Prosciutto</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-content">
+                        <h4>Prosciutto</h4>
+                        <p class="description">Arugula, prosciutto, parmesan, balsamic glaze</p>
+                        <div class="menu-item-footer">
+                            <span class="price">$26</span>
+                            <button class="add-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <button onclick="scrollLeft('scrollFood')"><i class="fas fa-chevron-left"></i></button>
+                <button onclick="scrollRight('scrollFood')"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+
+        <!-- Drinks Category -->
+        <div class="menu-category" data-category="drinks">
+            <div class="menu-category-header">
+                <h3>Wine & Cocktails</h3>
+                <a href="#" class="view-all">View All →</a>
+            </div>
+            <div class="menu-scroll" id="scrollDrinks">
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <div class="placeholder-visual-sm">
+                            <i class="fas fa-wine-bottle"></i>
+                            <span class="label">Barolo</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-content">
+                        <h4>Barolo</h4>
+                        <p class="description">Full-bodied red, aged 3 years, notes of cherry and truffle</p>
+                        <div class="menu-item-footer">
+                            <span class="price">$45</span>
+                            <button class="add-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <div class="placeholder-visual-sm">
+                            <i class="fas fa-wine-glass-alt"></i>
+                            <span class="label">Pinot Grigio</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-content">
+                        <h4>Pinot Grigio</h4>
+                        <p class="description">Crisp white, citrus and green apple notes</p>
+                        <div class="menu-item-footer">
+                            <span class="price">$38</span>
+                            <button class="add-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <div class="placeholder-visual-sm">
+                            <i class="fas fa-cocktail"></i>
+                            <span class="label">Negroni</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-content">
+                        <h4>Negroni</h4>
+                        <p class="description">Gin, Campari, sweet vermouth, orange peel</p>
+                        <div class="menu-item-footer">
+                            <span class="price">$16</span>
+                            <button class="add-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <button onclick="scrollLeft('scrollDrinks')"><i class="fas fa-chevron-left"></i></button>
+                <button onclick="scrollRight('scrollDrinks')"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+
+        <!-- Desserts Category -->
+        <div class="menu-category" data-category="desserts">
+            <div class="menu-category-header">
+                <h3>Dolci</h3>
+                <a href="#" class="view-all">View All →</a>
+            </div>
+            <div class="menu-scroll" id="scrollDesserts">
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <div class="placeholder-visual-sm">
+                            <i class="fas fa-cake"></i>
+                            <span class="label">Tiramisu</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-content">
+                        <h4>Tiramisu</h4>
+                        <p class="description">Classic Italian dessert with mascarpone and espresso</p>
+                        <div class="menu-item-footer">
+                            <span class="price">$12</span>
+                            <button class="add-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <div class="placeholder-visual-sm">
+                            <i class="fas fa-cake"></i>
+                            <span class="label">Panna Cotta</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-content">
+                        <h4>Panna Cotta</h4>
+                        <p class="description">Vanilla cream, mixed berry compote</p>
+                        <div class="menu-item-footer">
+                            <span class="price">$10</span>
+                            <button class="add-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <div class="placeholder-visual-sm">
+                            <i class="fas fa-cake"></i>
+                            <span class="label">Cannoli</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-content">
+                        <h4>Cannoli</h4>
+                        <p class="description">Crispy shells with sweet ricotta and chocolate chips</p>
+                        <div class="menu-item-footer">
+                            <span class="price">$8</span>
+                            <button class="add-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <button onclick="scrollLeft('scrollDesserts')"><i class="fas fa-chevron-left"></i></button>
+                <button onclick="scrollRight('scrollDesserts')"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+
+        <!-- Specials Category -->
+        <div class="menu-category" data-category="specials">
+            <div class="menu-category-header">
+                <h3>Chef's Specials</h3>
+                <a href="#" class="view-all">View All →</a>
+            </div>
+            <div class="menu-scroll" id="scrollSpecials">
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <div class="placeholder-visual-sm">
+                            <i class="fas fa-star"></i>
+                            <span class="label">Tartufo Nero</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-content">
+                        <h4>Tartufo Nero</h4>
+                        <p class="description">Black truffle cream, fontina, fresh mushrooms, truffle shavings</p>
+                        <div class="menu-item-footer">
+                            <span class="price">$32</span>
+                            <button class="add-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <div class="placeholder-visual-sm">
+                            <i class="fas fa-star"></i>
+                            <span class="label">Frutti di Mare</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-content">
+                        <h4>Linguine Frutti di Mare</h4>
+                        <p class="description">Fresh clams, mussels, prawns, garlic, white wine sauce</p>
+                        <div class="menu-item-footer">
+                            <span class="price">$28</span>
+                            <button class="add-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <button onclick="scrollLeft('scrollSpecials')"><i class="fas fa-chevron-left"></i></button>
+                <button onclick="scrollRight('scrollSpecials')"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SPECIALS BANNER ==================== -->
+    <section class="specials-banner">
+        <div class="specials-overlay"></div>
+        <div class="specials-content">
+            <span class="hero-subtitle">Seasonal Feature</span>
+            <h2>Tartufo Nero Pizza</h2>
+            <p>
+                Indulge in the earthy luxury of fresh black truffles, draped over
+                a creamy fontina base with wild mushrooms and a drizzle of truffle oil.
+                Available for a limited time only.
+            </p>
+            <a href="#reservations" class="btn btn-primary">Reserve to Try</a>
+        </div>
+    </section>
+
+    <!-- ==================== TESTIMONIALS SECTION ==================== -->
+    <section class="testimonials" id="reviews">
+        <div class="testimonials-container">
+            <div class="testimonials-header">
+                <h2>What Our Guests Say</h2>
+                <p>Don't just take our word for it</p>
+            </div>
+
+            <div class="testimonials-scroll" id="scrollTestimonials">
+                <!-- Review 1 -->
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">
+                        "Absolutely divine. The wood-fired flavor on the Margherita is unlike anything else in the city. It truly feels like dining in Italy."
+                    </p>
+                    <div class="review-author">
+                        <div class="author-avatar">SM</div>
+                        <div class="author-info">
+                            <span class="author-name">Sarah M.</span>
+                            <span class="author-source">Google Reviews</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">
+                        "We come here for every anniversary. The ambiance is incredibly romantic, and the Negronis are perfectly balanced. A true gem."
+                    </p>
+                    <div class="review-author">
+                        <div class="author-avatar">DL</div>
+                        <div class="author-info">
+                            <span class="author-name">David L.</span>
+                            <span class="author-source">Yelp</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">
+                        "The Tiramisu alone is worth the trip. Light, creamy, and soaked in just the right amount of espresso. Impeccable service as well."
+                    </p>
+                    <div class="review-author">
+                        <div class="author-avatar">EJ</div>
+                        <div class="author-info">
+                            <span class="author-name">Emily J.</span>
+                            <span class="author-source">Google Reviews</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 4 -->
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="review-text">
+                        "Best pasta I've had outside of Rome. The Linguine Frutti di Mare was bursting with fresh seafood. We will definitely be back."
+                    </p>
+                    <div class="review-author">
+                        <div class="author-avatar">MC</div>
+                        <div class="author-info">
+                            <span class="author-name">Marco C.</span>
+                            <span class="author-source">OpenTable</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 5 -->
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">
+                        "Fornello never disappoints. From the moment you walk in, you're treated like family. The Quattro Formaggi is a must-try!"
+                    </p>
+                    <div class="review-author">
+                        <div class="author-avatar">AT</div>
+                        <div class="author-info">
+                            <span class="author-name">Amanda T.</span>
+                            <span class="author-source">Yelp</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scroll-indicator light-indicator">
+                <button onclick="scrollLeft('scrollTestimonials')"><i class="fas fa-chevron-left"></i></button>
+                <button onclick="scrollRight('scrollTestimonials')"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== RESERVATION SECTION ==================== -->
+    <section class="reservations dark-section" id="reservations">
+        <div class="reservations-container">
+            <div class="reservation-info">
+                <h2>Reserve Your Table</h2>
+                <p>
+                    Secure your spot for an unforgettable evening of authentic Italian dining.
+                    For parties larger than 8, please call us directly.
+                </p>
+                <div class="reservation-details">
+                    <div class="detail-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>123 Little Italy Blvd, New York, NY</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-phone"></i>
+                        <span>(555) 123-4567</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Mon-Sun: 5:00 PM - 11:00 PM</span>
+                    </div>
+                </div>
+            </div>
+
+            <form class="reservation-form" onsubmit="event.preventDefault(); alert('Reservation request sent! (Add your backend logic here)');">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required placeholder="John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="john@example.com">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="time">Time</label>
+                        <select id="time" name="time" required>
+                            <option value="" disabled selected>Select Time</option>
+                            <option value="17:00">5:00 PM</option>
+                            <option value="17:30">5:30 PM</option>
+                            <option value="18:00">6:00 PM</option>
+                            <option value="18:30">6:30 PM</option>
+                            <option value="19:00">7:00 PM</option>
+                            <option value="19:30">7:30 PM</option>
+                            <option value="20:00">8:00 PM</option>
+                            <option value="20:30">8:30 PM</option>
+                            <option value="21:00">9:00 PM</option>
+                            <option value="21:30">9:30 PM</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="guests">Party Size</label>
+                        <select id="guests" name="guests" required>
+                            <option value="" disabled selected>Select Guests</option>
+                            <option value="1">1 Guest</option>
+                            <option value="2">2 Guests</option>
+                            <option value="3">3 Guests</option>
+                            <option value="4">4 Guests</option>
+                            <option value="5">5 Guests</option>
+                            <option value="6">6 Guests</option>
+                            <option value="7">7 Guests</option>
+                            <option value="8">8 Guests</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="requests">Special Requests</label>
+                        <input type="text" id="requests" name="requests" placeholder="e.g., Highchair, Allergies">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary form-submit-btn">Request Reservation</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        // Mobile Menu Elements
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeMenu = document.getElementById('closeMenu');
+        const mobileBackdrop = document.getElementById('mobileBackdrop');
+
+        // Function to open menu
+        function openMenu() {
+            mobileMenu.classList.add('active');
+            mobileBackdrop.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Function to close menu
+        function closeMenuFn() {
+            mobileMenu.classList.remove('active');
+            mobileBackdrop.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Event Listeners
+        hamburger.addEventListener('click', openMenu);
+        closeMenu.addEventListener('click', closeMenuFn);
+
+        // Fixed: Clicking the actual backdrop now closes the menu properly
+        mobileBackdrop.addEventListener('click', closeMenuFn);
+
+        // Close menu on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeMenuFn();
+        });
+
+        // ==================== NAV SCROLL FEATURE ====================
+        const nav = document.querySelector('nav');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // ==================== MENU SCROLL FUNCTIONS ====================
+        function scrollLeft(id) {
+            const container = document.getElementById(id);
+            container.scrollBy({ left: -300, behavior: 'smooth' });
+        }
+
+        function scrollRight(id) {
+            const container = document.getElementById(id);
+            container.scrollBy({ left: 300, behavior: 'smooth' });
+        }
+
+        // ==================== MENU TAB FILTERING ====================
+        const tabs = document.querySelectorAll('.menu-tab');
+        const categories = document.querySelectorAll('.menu-category');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+
+                const category = tab.dataset.category;
+
+                categories.forEach(cat => {
+                    if (category === 'all' || cat.dataset.category === category) {
+                        cat.style.display = 'block';
+                        // Smooth re-appear effect
+                        cat.style.opacity = '0';
+                        cat.style.transform = 'translateY(10px)';
+                        setTimeout(() => {
+                            cat.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+                            cat.style.opacity = '1';
+                            cat.style.transform = 'translateY(0)';
+                        }, 10);
+                    } else {
+                        cat.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
